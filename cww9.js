@@ -1,14 +1,8 @@
-//Given a positive integer N, return the largest integer k such that 3^k < N.
+//You are given two strings. In a single move, you can choose any of them, and delete the first (i.e. leftmost) character.
 
-
-function largestPower(n){
-    if (n == 3 || n == 2 || n == 0) {
-        return 0;
-    }
-    else if (n == 1) {
-        return -1;
-    }
-    else {
-        return Math.trunc(Math.log(n-1)/Math.log(3));
-    }
+function shiftLeft(s, t) {
+    let i = s.length, l = t.length;
+    while (i >= 0 && l >= 0 && s[i] == t[l])
+      i--, l--;
+    return (i + 1) + (l + 1);
   }
